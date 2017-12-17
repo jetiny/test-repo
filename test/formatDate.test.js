@@ -4,7 +4,6 @@ import formatDate from '../formatDate.js'
 
 test('formatDate', t => {
   // should return the default formatDate
-  console.log(formatDate())
   expect(/^\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}$/.test(formatDate())).to.eql(true)
   // should work with delimiters
   expect(/^\[\d{4}\]/.test(formatDate('[YYYY]'))).to.eql(true)
@@ -23,7 +22,6 @@ test('formatDate', t => {
   //'should return seconds
   expect(/^\d{2}$/.test(formatDate('ss'))).to.eql(true)
   //'should return miliseconds
-  console.log(formatDate('ms'))
   expect(/^\d{3}$/.test(formatDate('ms'))).to.eql(true)
   // should work with no separators
   expect(/^\d{4}\d{2}$/.test(formatDate('YYYYMM'))).to.eql(true)
@@ -31,7 +29,6 @@ test('formatDate', t => {
   expect(/^\d{4}\d{2}\d{2}\d{2}$/.test(formatDate('YYYYMMDDss'))).to.eql(true)
   expect(/^\d{4}\d{2}\d{2}$/.test(formatDate('YYYYMMss'))).to.eql(true)
   // 参数选项
-  // console.log(formatDate('2017-12-06', 'YY年MM月DD日'))
   expect(formatDate('2017-12-06', 'YY年MM月DD日')).to.eql('17年12月06日')
   expect(formatDate(1513310471409, 'YY年MM月DD日')).to.eql('17年12月15日')
   expect(formatDate(new Date(), 'YY年MM月DD日').length).to.eql(9)
