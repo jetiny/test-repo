@@ -23,6 +23,7 @@ test('formatDate', t => {
   //'should return seconds
   expect(/^\d{2}$/.test(formatDate('ss'))).to.eql(true)
   //'should return miliseconds
+  console.log(formatDate('ms'))
   expect(/^\d{3}$/.test(formatDate('ms'))).to.eql(true)
   // should work with no separators
   expect(/^\d{4}\d{2}$/.test(formatDate('YYYYMM'))).to.eql(true)

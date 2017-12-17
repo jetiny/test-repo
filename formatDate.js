@@ -1,10 +1,11 @@
 const formatDate =(now, format) => {
   let newTime = new Date();
-  if (format === 'YY年MM月DD日') {
+  if (format) {
     newTime = new Date(now)
   }
   let formTime = {
     year : newTime.getFullYear(),
+    years : newTime.getYear()-100,
     month : newTime.getMonth()+1,     
     date : newTime.getDate(),     
     hour : newTime.getHours(),  
@@ -13,24 +14,22 @@ const formatDate =(now, format) => {
     milliSecond : newTime.getMilliseconds()
   }
   let time;
+  // 1 => 01
   for (let k in formTime) {
-    if ((formTime[k]+"").length === 1) {
-      formTime[k] = "0" + formTime[k]
+    if ((formTime[k] + '').length === 1) {
+      formTime[k] = '0' + formTime[k]
     } else {
-      formTime[k] = "" + formTime[k]
+      formTime[k] = '' + formTime[k]
     }
   }
-  if (format === 'YY年MM月DD日') {
-    if (/^\d{4}-\d{2}-\d{2}$/.test(now)) {
-      let time = now.split('-')
-      return new Date(now).getYear()-100 + '年' + time[1] + '月' + time[2] + '日'
-    }
-    else if (typeof(now) === 'number') {
-      return new Date(now).getYear()-100 +"年"+ ((new Date(now).getMonth()*1)+1) +"月" + new Date(now).getDate()+"日";     
-    } 
-    else {
-     return new Date(now).getYear()-100+ '年' + formTime.month + '月' + formTime.date + '日'
-    }
+  // 1 => 001
+  while ((formTime.milliSecond + '').length < 3)
+  {
+    formTime.milliSecond = '0' + formTime.milliSecond
+  }
+  // 转 中文日期
+  if (format === 'YY年MM月DD日' && now) {
+     return formTime.years+ '年' + formTime.month + '月' + formTime.date + '日'
   } else {
     switch(now)
     {
