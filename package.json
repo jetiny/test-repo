@@ -1,0 +1,29 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "randomString.js",
+  "scripts": {
+    "test": "nyc ava ./test/*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ava": "^0.24.0",
+    "chai": "^4.1.2",
+    "nyc": "^11.3.0"
+  },
+  "ava": {
+    "babel": "inherit",            
+    "require": [     
+      "babel-register",
+      "babel-polyfill"
+    ]
+  },
+  "devDependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}
