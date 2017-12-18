@@ -1,0 +1,20 @@
+{
+  "name": "linzy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint && nyc ava ./test",
+    "fix": "npm run lint -- --fix",
+    "lint": "standard test/** src/**"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^8.0.3",
+    "chai": "^4.1.2",
+    "eslint-plugin-standard": "^3.0.1",
+    "nyc": "^11.3.0",
+    "standard": "^10.0.3"
+  }
+}
