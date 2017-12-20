@@ -1,4 +1,4 @@
-export default (() => {
+module.exports = function randomString () {
   const $s = '`!@#$%^&*()-+=_[]{},./<>?;:"|\\\''
   const lowers = 'abcdefghijklmnopqrstuvwxyz'
   const uppers = lowers.toUpperCase()
@@ -30,7 +30,7 @@ export default (() => {
     let str = ''
     let chr
     if (symbols) {
-      chars = chars.replace($s, '')
+      chars = chars.replace($s, '') + symbols
       charl = chars.length
     }
     while (size-- > 0) {
@@ -39,4 +39,4 @@ export default (() => {
     }
     return str
   }
-})()
+}

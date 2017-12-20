@@ -6,11 +6,13 @@
   "scripts": {
     "test": "npm run lint && nyc ava ./test",
     "fix": "npm run lint -- --fix",
-    "lint": "standard test/** src/**"
+    "lint": "standard test/** src/**",
+    "test-ava": "nyc ava"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "ava": "^0.24.0",
     "babel-eslint": "^8.0.3",
     "chai": "^4.1.2",
     "eslint-plugin-standard": "^3.0.1",
