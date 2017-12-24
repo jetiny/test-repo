@@ -1,0 +1,27 @@
+{
+  "name": "charlie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc ava -v ./lib/*.spec.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ava": "^0.24.0",
+    "chai": "^4.1.2",
+    "nyc": "^11.4.1"
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
+  "babel": {
+    "presets": [
+      "@ava/stage-4"
+    ]
+  }
+}
