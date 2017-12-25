@@ -1,4 +1,6 @@
-
+/*
+ * testFormatDate.js
+ */
  import test from 'ava'
  import {expect} from 'chai'
  import formatDate from '../src/formatDate.js'
